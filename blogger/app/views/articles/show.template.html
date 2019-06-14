@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><=%@article.title %></title>
+    </head>
+    <body>
+        <h1><%=$@article.title %></h1>
+        <br>
+        <p><%=@article.body %></p>
+        <br>
+        <%= link_to "<< Back to Articles List", articles_path %>
+    </body>
+</html>
