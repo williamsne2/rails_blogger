@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Ruby Project</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>All Articles</h1>
+        </header>
+
+        <div class="article-list">
+            <ul id="articles">
+                <% @articles.each do |article| %>
+                    <li>
+                        <%= link_to article.title, article_path(article), 
+                            class: 'article_title', id: "article_#{article.id}"%>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <br>
+        <div class="new-article">
+            <%= link_to Create New Article, new_article_path, class: "new_article" %>
+        </div>
+    </body>
+</html>
