@@ -8,6 +8,11 @@
         <br>
         <p><%=@article.body %></p>
         <br>
+        <br>
+        <%= link_to "edit", edit_article_path(@article) %>
+        <br>
+        <%= link_to "delete", article_path(@article), html_options = {method: :delete, data: {confirm: "Really delete this article?"}}%>
+        <br>
         <%= link_to "<< Back to Articles List", articles_path %>
     </body>
 </html>
