@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Ruby Project</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>All Tags</h1>
+        </header>
+
+        <div class="tag-list">
+            <ul id="tags">
+                <% @tag.each do |tag| %>
+                    <li>
+                        <%= tag.name %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </body>
+</html>
