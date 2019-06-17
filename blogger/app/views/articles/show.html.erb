@@ -8,10 +8,16 @@
         <br>
         <p><%=@article.body %></p>
         <br>
-        <br>
+                <br>
         <%= link_to "edit", edit_article_path(@article) %>
         <br>
         <%= link_to "delete", article_path(@article), html_options = {method: :delete, data: {confirm: "Really delete this article?"}}%>
+        <br>
+        <br>
+        <h3>Comments (<%= @article.comments.count %>)</h3>
+        <%= render partial: 'articles/comment', collection: @article.comments %>
+        
+        <%= render partial: 'comments/form' %>
         <br>
         <%= link_to "<< Back to Articles List", articles_path %>
     </body>
