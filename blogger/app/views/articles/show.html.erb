@@ -8,6 +8,10 @@
         <br>
         <p><%=@article.body %></p>
         <br>
+        <% if @article.image.exists? %>
+            <%= image_tag @article.image.url(:thumb) %><br/>
+        <% end %>
+        <br>
         <p>
             Tags:
             <% @article.tags.each do |tag| %>
