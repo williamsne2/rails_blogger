@@ -19,15 +19,18 @@
             <% end %>    
         </p>
                 <br>
+        <% if logged_in? %>
         <%= link_to "edit", edit_article_path(@article) %>
         <br>
         <%= link_to "delete", article_path(@article), html_options = {method: :delete, data: {confirm: "Really delete this article?"}}%>
         <br>
         <br>
+        <% end %>
         <h3>Comments (<%= @article.comments.count %>)</h3>
         <%= render partial: 'articles/comment', collection: @article.comments %>
-        
+        <% if logged_in? %>
         <%= render partial: 'comments/form' %>
+        <% end %>
         <br>
         <%= link_to "<< Back to Articles List", articles_path %>
     </body>
